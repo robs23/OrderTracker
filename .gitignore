@@ -1,0 +1,6 @@
+codealike.json
+.vscode
+bin
+obj
+*.db
+wwwroot
