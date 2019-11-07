@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OrderTracker.API.Data;
 
 namespace OrderTracker.API
 {
@@ -26,6 +28,7 @@ namespace OrderTracker.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers(option => option.EnableEndpointRouting = false);
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ProductionConnectionString")));
             services.AddMvc();
         }
 
