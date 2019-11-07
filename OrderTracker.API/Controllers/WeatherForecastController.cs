@@ -35,5 +35,11 @@ namespace OrderTracker.API.Controllers
             })
             .ToArray();
         }
+
+        [HttpGet]
+
+        public WeatherForecast GetForecast(){
+            return new WeatherForecast { Date = DateTime.Now.Date, TemperatureC = -20};
+        }
     }
 }
