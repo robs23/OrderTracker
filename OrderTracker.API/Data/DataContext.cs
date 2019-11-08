@@ -5,11 +5,19 @@ namespace OrderTracker.API.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DbContext> options) : base(options)
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
             
         }
 
         DbSet<OT_Tenant> Tenants {get;set;}
+
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     if (!optionsBuilder.IsConfigured)
+        //     {
+        //         optionsBuilder.UseSqlServer(Conf);
+        //     }
+        // }
     }
 }

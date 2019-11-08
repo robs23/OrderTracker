@@ -4,7 +4,7 @@ namespace OrderTracker.API.Models
 {
     public class OT_Tenant
     {
-        public int TenantId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public string Token { get; set; }
