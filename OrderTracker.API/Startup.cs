@@ -28,7 +28,7 @@ namespace OrderTracker.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers(option => option.EnableEndpointRouting = false);
-            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ProductionConnectionString")));
+            services.AddDbContext<DataContext>(x => x.UseSqlServer(Configuration["TestDb"]));
             services.AddMvc();
         }
 
