@@ -10,12 +10,19 @@ namespace OrderTracker.API.Controllers
     {
         private readonly DataContext _context;
 
+        public TenantController(DataContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        [Route("GetTenant")]
         public ActionResult GetTenant(string token, int id){
             var tenants = _context.Tenants.Where(x=>x.Id==id && x.Token == token);
             if(tenants.Any()){
                 return Ok(tenants);
             }else{
-                return NotFound();
+                return Ok("pipa");
             }
         }
 

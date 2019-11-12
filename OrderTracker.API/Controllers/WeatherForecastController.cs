@@ -36,10 +36,10 @@ namespace OrderTracker.API.Controllers
             .ToArray();
         }
 
-        [HttpGet]
+        // [HttpGet]
 
-        public WeatherForecast GetForecast(){
-            return new WeatherForecast { Date = DateTime.Now.Date, TemperatureC = -20};
-        }
+        // public WeatherForecast GetForecast(){
+        //     return new WeatherForecast { Date = DateTime.Now.Date, TemperatureC = -20};
+        // }
     }
 }
