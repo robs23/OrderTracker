@@ -18,7 +18,7 @@ namespace OrderTracker.API.Controllers
         [HttpGet]
         [Route("GetTenant")]
         public ActionResult GetTenant(string token, int id){
-            var tenants = _context.Tenants.Where(x=>x.Id==id && x.Token == token);
+            var tenants = _context.OT_Tenants.Where(x=>x.Id==id && x.Token == token);
             if(tenants.Any()){
                 return Ok(tenants);
             }else{
@@ -26,9 +26,11 @@ namespace OrderTracker.API.Controllers
             }
         }
 
-        public async Task<ActionResult> CreateTentant(OT_Tenant tenant)
+        [HttpPost]
+        [Route("CreateTenant")]
+        public async Task<ActionResult> CreateTenant(OT_Tenant tenant)
         {
-            _context.Tenants.Add(tenant);
+            _context.OT_Tenants.Add(tenant);
             await _context.SaveChangesAsync();
             return Ok(tenant);
         }

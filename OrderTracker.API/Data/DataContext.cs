@@ -10,7 +10,7 @@ namespace OrderTracker.API.Data
             
         }
 
-        public DbSet<OT_Tenant> Tenants {get;set;}
+        public DbSet<OT_Tenant> OT_Tenants {get;set;}
 
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         // {
