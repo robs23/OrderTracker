@@ -9,7 +9,7 @@ public class Employee
     public void Employment()
     {
         Employee employee = new Employee();
-        employee.Id = 15;
+        employee.Id = 10;
 
     }
 
